@@ -37,7 +37,9 @@ Results:
 
 #### Improve on the reference
 Approach taken to improve model performence consisted of adding more data augmentation steps (so the model could generalize better), adding nn layer and increasing training steps so it can converge better.
+Augmentation steps exploration can be found in `Explore augmentations.ipynb` notebook.
 The results are located in directory `experiments/test2`
+
 The model improved its performance:
 * classification_loss = 0.268
 * localization_loss = 0.5031
