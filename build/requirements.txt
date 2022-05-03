@@ -7,4 +7,3 @@ tqdm
 sklearn 
 pandas
 tensorboard
-pycocotools
