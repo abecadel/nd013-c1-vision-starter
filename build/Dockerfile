@@ -34,9 +34,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN python3 -m pip install -r requirements.txt
-RUN python3 -m pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
-
-# ENV TF_CPP_MIN_LOG_LEVEL=2
+RUN python3 -m pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
 # get models
 RUN git clone https://github.com/tensorflow/models.git && \
