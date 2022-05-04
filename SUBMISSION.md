@@ -52,10 +52,11 @@ More details are in `Exploratory Data Analysis.ipynb` and in `create_splits.py`.
 
 ## Training
 
-![metrics](img/metrics.png)
-Legend:
-* orange - reference model
-* red - improved model
+![legend](img/legend.png)
+![precission](img/detectionboxes_precission.png)
+![recall](img/detectionboxes_recall.png)
+![losses](img/losses.png)
+
 
 
 ### Reference experiment
@@ -64,11 +65,8 @@ Reference model is a default model with it's configuration generated with `edit_
 As we can see in a plot above the model is converging (all of the loses are decreasing) and it didn't reached a plateau. 
 It might be a good idea to increase training epoch to converge better. 
 We must however make sure we don't overfit - so adding more data augmentation steps could help it generalise better.
-Results:
-* classification_loss = 0.5002
-* localization_loss = 0.4074
-* regularization_loss = 0.3422
-* total_loss = 1.25
+The results are located in directory `experiments/reference`
+
 
 ### Improve on the reference
 
@@ -76,8 +74,14 @@ Approach taken to improve model performence consisted of adding more data augmen
 Augmentation steps exploration can be found in `Explore augmentations.ipynb` notebook.
 The results are located in directory `experiments/test2`
 
-The model improved its performance:
-* classification_loss = 0.268
-* localization_loss = 0.5031
-* regularization_loss = 0.1506
-* total_loss = 0.9217
+Data augmentation steps used:
+* random_horizontal_flip
+* random_crop_image
+* random_jitter_boxes
+* random_black_patches
+* random_adjust_brightness
+* random_adjust_contrast
+* random_adjust_hue
+* random_adjust_saturation
+* random_distort_color
+* random_crop_to_aspect_ratio
